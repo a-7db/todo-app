@@ -1,0 +1,41 @@
+<div class="flex flex-col  mx-auto mt-10 w-7/12 bg-white rounded-lg text-black">
+    <!-- NOT Completed Tasks -->
+    <div class="mb-5">
+        <div class="bg-indigo-800 text-white font-bold text-lg rounded-t-md">
+            <h3 class="py-1 px-4">NOT Completed Tasks</h3>
+        </div>
+        <div class="flex flex-col gap-2 mx-6 my-3" >
+            <div *ngFor="let task of InCompletedTasks" class="flex hover:bg-indigo-50 duration-300 justify-between align-middle rounded-md shadow-md p-2 h-12">
+                <h4>{{ task.Task_name }}</h4>
+                <div class="flex gap-3 self-center">
+                    <div>
+                        <mat-checkbox [color]="color" class="example-margin h-fit"></mat-checkbox>
+                    </div>
+                    <button class="text-gray-400 hover:text-red-500 duration-500" mat-fab extended>
+                        <mat-icon>delete</mat-icon>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Completed Tasks -->
+    <div>
+        <div class="bg-indigo-800 text-white font-bold text-lg">
+            <h3 class="py-1 px-4">Completed Tasks</h3>
+        </div>
+        <div class="flex flex-col gap-2 mx-6 my-3">
+            <div *ngFor="let task of completedTasks" class="flex hover:bg-indigo-50 duration-300 justify-between align-middle rounded-md shadow-md p-2 h-12">
+                <h4>{{task.Task_name}}</h4>
+                <div class="flex gap-3 self-center">
+                    <div>
+                        <mat-checkbox [checked]="task.IsCompleted" [color]="color" class="example-margin h-fit"></mat-checkbox>
+                    </div>
+                    <button (click)="removeTask(task.ID)" class="text-gray-400 hover:text-red-500 duration-500" mat-fab extended>
+                        <mat-icon>delete</mat-icon>
+                    </button>
+                </div>
+            </div>
+    
+        </div>
+    </div>
+</div>
