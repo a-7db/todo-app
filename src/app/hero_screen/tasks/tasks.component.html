@@ -9,7 +9,7 @@
                 <h4>{{ task.Task_name }}</h4>
                 <div class="flex gap-3 self-center">
                     <div>
-                        <mat-checkbox [color]="color" class="example-margin h-fit"></mat-checkbox>
+                        <mat-checkbox (change)="compeletTask($event.checked, task)" [color]="color" class="example-margin h-fit"></mat-checkbox>
                     </div>
                     <button class="text-gray-400 hover:text-red-500 duration-500" mat-fab extended>
                         <mat-icon>delete</mat-icon>
@@ -28,7 +28,7 @@
                 <h4>{{task.Task_name}}</h4>
                 <div class="flex gap-3 self-center">
                     <div>
-                        <mat-checkbox [checked]="task.IsCompleted" [color]="color" class="example-margin h-fit"></mat-checkbox>
+                        <mat-checkbox (change)="compeletTask($event.checked, task)" [checked]="task.IsCompleted" [color]="color" class="example-margin h-fit"></mat-checkbox>
                     </div>
                     <button (click)="removeTask(task.ID)" class="text-gray-400 hover:text-red-500 duration-500" mat-fab extended>
                         <mat-icon>delete</mat-icon>

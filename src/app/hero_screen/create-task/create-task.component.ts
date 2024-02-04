@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { isEmpty } from 'rxjs';
 import { AddToDoService } from 'src/app/services/add-to-do.service';
 
 @Component({
@@ -18,5 +17,6 @@ export class CreateTaskComponent implements OnInit {
 
   addToDo(){
     this.TaskService.addTask(this.taskName);
+    this.taskName = ''
   }
 }

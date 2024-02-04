@@ -24,5 +24,9 @@ export class TasksComponent implements OnInit {
   removeTask(taskID: number){
 
   }
+
+  compeletTask(compeleted: boolean, task: Task){
+    this.TaskService.switchTasks(compeleted, task);
+  }
   
 }
